@@ -1,0 +1,139 @@
+{
+  "address": "0xecfCfeD4AEE663D667Fdf6C9aE1E03694217Dd7E",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "div",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "mul",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "sub",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4874fda9661d8b931deedfcb45e15335552c59fe7e98513674abce0fd8a53eec",
+  "receipt": {
+    "to": null,
+    "from": "0x76BFCAaa33b9f36d3a8e6531DA3bd42EC8D87198",
+    "contractAddress": "0xecfCfeD4AEE663D667Fdf6C9aE1E03694217Dd7E",
+    "transactionIndex": 68,
+    "gasUsed": "147421",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xc6c9fe2e8f9e1787478251c17bae747982bd756d0eb33438347adc506ca243b4",
+    "transactionHash": "0x4874fda9661d8b931deedfcb45e15335552c59fe7e98513674abce0fd8a53eec",
+    "logs": [],
+    "blockNumber": 11906951,
+    "cumulativeGasUsed": "3986715",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bcf2368ee63bfe5011abe7dd444d1e43",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"div\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"mul\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"sub\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"BuidlGuidl\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A smart contract that allows changing a state variable of the contract and tracking the changes It also allows the owner to withdraw the Ether in the contract\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/YourContract.sol\":\"YourContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/YourContract.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.0 <0.9.0;\\n\\n// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)\\n// import \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n/*\\n\\n d8b                                     d8b                       d8b        \\n ?88                                     88P                       88P        \\n  88b                                   d88                       d88         \\n  888888b  d888b8b   .d888b, d8888b d888888       d8888b d888b8b  888   d8888b\\n  88P `?8bd8P' ?88   ?8b,   d8b_,dPd8P' ?88      d8P' `Pd8P' ?88  ?88  d8P' `P\\n d88,  d8888b  ,88b    `?8b 88b    88b  ,88b     88b    88b  ,88b  88b 88b    \\nd88'`?88P'`?88P'`88b`?888P' `?888P'`?88P'`88b    `?888P'`?88P'`88b  88b`?888P'\\n       \\n\\t                                                                          \\n                                                                              \\n                                                                              \\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t  */\\n/**\\n * A smart contract that allows changing a state variable of the contract and tracking the changes\\n * It also allows the owner to withdraw the Ether in the contract\\n * @author BuidlGuidl\\n */\\ncontract YourContract {\\n\\n\\n\\tfunction add(uint256 a, uint256 b) public pure returns (uint256) {\\n\\t\\treturn a + b;\\n\\t}\\n\\tfunction sub(uint256 a, uint256 b) public pure returns (uint256) {\\n\\t\\treturn a - b;\\n\\t}\\n\\tfunction mul(uint256 a, uint256 b) public pure returns (uint256) {\\n\\t\\treturn a * b;\\n\\t}\\n\\tfunction div(uint256 a, uint256 b) public pure returns (uint256) {\\n\\t\\treturn a / b;\\n\\t}\\n\\n\\n}\\n\",\"keccak256\":\"0x0d8be98236992b42ed134bb7c73db59e3c83a07285d5a9d4fc569a2230f19a31\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101b5806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063771602f714610051578063a391c15b14610076578063b67d77c514610089578063c8a4ac9c1461009c575b600080fd5b61006461005f3660046100e8565b6100af565b60405190815260200160405180910390f35b6100646100843660046100e8565b6100c4565b6100646100973660046100e8565b6100d0565b6100646100aa3660046100e8565b6100dc565b60006100bb8284610120565b90505b92915050565b60006100bb8284610133565b60006100bb8284610155565b60006100bb8284610168565b600080604083850312156100fb57600080fd5b50508035926020909101359150565b634e487b7160e01b600052601160045260246000fd5b808201808211156100be576100be61010a565b60008261015057634e487b7160e01b600052601260045260246000fd5b500490565b818103818111156100be576100be61010a565b80820281158282048414176100be576100be61010a56fea26469706673582212202c9c5c3be945af8b83f930fc8cafbd47135e5d7baecfd534e82a215fd10cc2e364736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063771602f714610051578063a391c15b14610076578063b67d77c514610089578063c8a4ac9c1461009c575b600080fd5b61006461005f3660046100e8565b6100af565b60405190815260200160405180910390f35b6100646100843660046100e8565b6100c4565b6100646100973660046100e8565b6100d0565b6100646100aa3660046100e8565b6100dc565b60006100bb8284610120565b90505b92915050565b60006100bb8284610133565b60006100bb8284610155565b60006100bb8284610168565b600080604083850312156100fb57600080fd5b50508035926020909101359150565b634e487b7160e01b600052601160045260246000fd5b808201808211156100be576100be61010a565b60008261015057634e487b7160e01b600052601260045260246000fd5b500490565b818103818111156100be576100be61010a565b80820281158282048414176100be576100be61010a56fea26469706673582212202c9c5c3be945af8b83f930fc8cafbd47135e5d7baecfd534e82a215fd10cc2e364736f6c63430008110033",
+  "devdoc": {
+    "author": "BuidlGuidl",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "A smart contract that allows changing a state variable of the contract and tracking the changes It also allows the owner to withdraw the Ether in the contract",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

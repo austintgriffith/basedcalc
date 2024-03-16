@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/YourContract.sol": {
+      "content": "//SPDX-License-Identifier: MIT\npragma solidity >=0.8.0 <0.9.0;\n\n// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)\n// import \"@openzeppelin/contracts/access/Ownable.sol\";\n/*\n\n d8b                                     d8b                       d8b        \n ?88                                     88P                       88P        \n  88b                                   d88                       d88         \n  888888b  d888b8b   .d888b, d8888b d888888       d8888b d888b8b  888   d8888b\n  88P `?8bd8P' ?88   ?8b,   d8b_,dPd8P' ?88      d8P' `Pd8P' ?88  ?88  d8P' `P\n d88,  d8888b  ,88b    `?8b 88b    88b  ,88b     88b    88b  ,88b  88b 88b    \nd88'`?88P'`?88P'`88b`?888P' `?888P'`?88P'`88b    `?888P'`?88P'`88b  88b`?888P'\n       \n\t                                                                          \n                                                                              \n                                                                              \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  */\n/**\n * A smart contract that allows changing a state variable of the contract and tracking the changes\n * It also allows the owner to withdraw the Ether in the contract\n * @author BuidlGuidl\n */\ncontract YourContract {\n\n\n\tfunction add(uint256 a, uint256 b) public pure returns (uint256) {\n\t\treturn a + b;\n\t}\n\tfunction sub(uint256 a, uint256 b) public pure returns (uint256) {\n\t\treturn a - b;\n\t}\n\tfunction mul(uint256 a, uint256 b) public pure returns (uint256) {\n\t\treturn a * b;\n\t}\n\tfunction div(uint256 a, uint256 b) public pure returns (uint256) {\n\t\treturn a / b;\n\t}\n\n\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
