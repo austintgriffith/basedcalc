@@ -1,66 +1,96 @@
 "use client";
 
-import Link from "next/link";
-import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import { Address } from "~~/components/scaffold-eth";
+import { useDeployedContractInfo, useScaffoldContractRead } from "~~/hooks/scaffold-eth";
 
-const Home: NextPage = () => {
-  const { address: connectedAddress } = useAccount();
+const Home = () => {
+  const [display, setDisplay] = useState("");
+  const [memoryDisplay, setMemoryDisplay] = useState("");
+  const [operation, setOperation] = useState("");
+  const [firstOperand, setFirstOperand] = useState("");
+
+  const handleNumberClick = number => {
+    setDisplay(prevDisplay => prevDisplay + number);
+  };
+
+  const handleOperationClick = op => {
+    setOperation(op);
+    setFirstOperand(display);
+    setMemoryDisplay(`${display} ${op}`);
+    setDisplay("");
+  };
+
+  const performCalculation = async () => {
+    if (!operation || !firstOperand || !display) return;
+
+    // Simulate a contract call. Replace this with your contract read call.
+    const result = simulateContractCall(firstOperand, display, operation);
+
+    setMemoryDisplay(`${firstOperand} ${operation} ${display} =`);
+    setDisplay(result.toString());
+    setOperation("");
+    setFirstOperand("");
+  };
+
+  const clearDisplay = () => {
+    setDisplay("");
+    setMemoryDisplay("");
+    setOperation("");
+    setFirstOperand("");
+  };
+
+  // Placeholder function to simulate contract call
+  const simulateContractCall = (a, b, op) => {
+    switch (op) {
+      case "+":
+        return parseInt(a) + parseInt(b);
+      case "-":
+        return parseInt(a) - parseInt(b);
+      case "*":
+        return parseInt(a) * parseInt(b);
+      case "/":
+        return parseInt(a) / parseInt(b);
+      default:
+        return 0;
+    }
+  };
+
+  const buttons = ["1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "C", "0", "=", "/"];
+
+  const { data: yourContract } = useDeployedContractInfo("YourContract");
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
-          </h1>
-          <div className="flex justify-center items-center space-x-2">
-            <p className="my-2 font-medium">Connected Address:</p>
-            <Address address={connectedAddress} />
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="calculator bg-white shadow-xl rounded-lg">
+          <div className="flex items-center justify-center p-4 text-2xl font-bold text-center ">Based Calc</div>
+          <div className="flex items-center justify-center p-4 text-2xl font-bold text-center ">
+            <Address address={yourContract?.address} />
           </div>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
-        </div>
 
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
+          <div className="memory-display bg-gray-200 p-2 text-right text-sm opacity-50">{memoryDisplay}</div>
+          <div className="display bg-gray-200 p-4 text-right text-2xl">{display}</div>
+          <div className="grid grid-cols-4 gap-2 p-4">
+            {buttons.map((button, idx) => (
+              <button
+                key={idx}
+                className="btn btn-outline btn-lg"
+                onClick={() => {
+                  if (button.match(/[0-9]/)) {
+                    handleNumberClick(button);
+                  } else if (button === "C") {
+                    clearDisplay();
+                  } else if (button === "=") {
+                    performCalculation();
+                  } else {
+                    handleOperationClick(button);
+                  }
+                }}
+              >
+                {button}
+              </button>
+            ))}
           </div>
         </div>
       </div>
